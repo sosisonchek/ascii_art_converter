@@ -11,5 +11,6 @@ def image_choosing():
     while True:
         choice_image = int(input())
         choice_size = int(input("Введите предпочитаемую ширину: "))
+        choice_inversion = input(f"Инверсировать картинку? y/n \n")
         if choice_image < len(image_names):
-            return (os.path.join('images', image_names[choice_image]), choice_size)
+            return (os.path.join('images', image_names[choice_image]), choice_size, choice_inversion)

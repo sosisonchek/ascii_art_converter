@@ -1,11 +1,14 @@
 from PIL import Image
 import numpy as np
 
-gradients = '%@#*+=-:. '
+def convertion(file, target_width, inversion):
+    if inversion == 'y':
+        gradients = '%@#*+=-:. '
+    else:
+        gradients = ' .:-=+*#%@'
 
-multiplier = (len(gradients) - 1) / 256
-def convertion(file, target_width):
-
+    multiplier = (len(gradients) - 1) / 256
+    
     with Image.open(file) as img:
 
         width, height = img.size
